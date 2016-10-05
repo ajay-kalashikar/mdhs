@@ -1,6 +1,7 @@
 <?php
 
-Route::group(['middleware' => 'web', 'prefix' => 'careproviders', 'namespace' => 'Modules\CareProviders\Http\Controllers'], function()
+Route::group(['prefix' => 'careproviders', 'namespace' => 'Modules\CareProviders\Http\Controllers'], function()
 {
-    Route::get('/', 'CareProvidersController@index');
+//    Route::get('/', 'CareProvidersController@index');
+    Route::resource('api', 'CareProvidersController', ['except' => ['create', 'update', 'edit']]);
 });
