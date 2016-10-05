@@ -9,6 +9,10 @@ services:
 
 before_script:
   - cp .env.travis .env
+  - chmod -R 0777 storage
+  - mkdir storage/framework/sessions
+  - mkdir storage/framework/views
+  - mkdir storage/framework/cache
   - psql -c 'create database travis_ci_test;' -U postgres
   - composer self-update
   - composer install
