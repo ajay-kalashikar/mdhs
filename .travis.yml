@@ -9,6 +9,7 @@ services:
 
 before_script:
   - cp .env.travis .env
+  - mkdir storage/
   - chmod -R 0777 storage
   - mkdir storage/framework/sessions
   - mkdir storage/framework/views
