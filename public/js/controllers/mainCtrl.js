@@ -41,6 +41,7 @@ angular.module('mainCtrl', [])
 		Search.getCounties()
 		.then(
 			function(counties){
+				
 				$scope.counties = counties;
 			},
 			function(error){
@@ -74,17 +75,7 @@ angular.module('mainCtrl', [])
 				}
 		);
 
-		// loading variable to show the spinning loading icon
-		$scope.loading = true;
 		
-		// get all the comments first and bind it to the $scope.comments object
-		/*Search.get()
-			.success(function(data) {
-				$scope.comments = data;
-				$scope.loading = false;
-			});
-*/
-
 		// function to handle submitting the form
 		$scope.search = function() {
 			$scope.loading = true;
@@ -121,6 +112,14 @@ angular.module('mainCtrl', [])
 	 		
 	        // get current page of items
 	        $scope.items = $scope.searchResult.slice($scope.pager.startIndex, $scope.pager.endIndex + 1);
+    	}
+
+    	$scope.resetForm = function(){
+    		console.log("RESET");
+    		$scope.pager = [];
+    		$scope.items = [];
+    		$scope.searchData = {};
+
     	}
 
     	initController();

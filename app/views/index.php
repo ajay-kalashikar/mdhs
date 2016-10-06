@@ -87,13 +87,16 @@
       <option ng-repeat="rating in ratings" value="{{rating.rating}}">{{rating.description}}</option>
     </select>
      <div class="usa-input-error-message" ng-if="errorMsg">{{errorMsg}}</div>
+
     </fieldset>
-    <input type="submit" value="Search" />
+    <p><input type="submit" value="Search" class="usa-button" /> </p>
+    
   </form>
 
   <h6>Child Care Providers</h6>
-
+  <p><input type="reset" value="reset" class="pull-xs-right" ng-click="resetForm()"/></p>
   <table class="usa-table-borderless">
+    
     <thead>
       <tr>
         <th scope="col">Name</th>
