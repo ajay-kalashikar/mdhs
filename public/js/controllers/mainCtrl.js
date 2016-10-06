@@ -41,6 +41,7 @@ angular.module('mainCtrl', [])
 		Search.getCounties()
 		.then(
 			function(counties){
+				
 				$scope.counties = counties;
 			},
 			function(error){
