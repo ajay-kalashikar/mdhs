@@ -38,10 +38,10 @@ class CareProvidersController extends Controller {
             if (!empty($city)) {
                 $query->where('physical_city', 'like', $city);
             }
-            if (!empty($rating)) {
+            if (trim($rating) !== '') {
                 $query->where('quality_rating', '=', $rating);
             }
-            $details = $query->paginate($page_size, ['*'], 'page', $page);
+            $details = $query->paginate(10000, ['*'], 'page', $page);
             return response($details, 200);
         }
         catch (Exception $ex) {
