@@ -23,14 +23,12 @@ deploy:
   api_key:
     secure: IVVxCp1klfUddPdTYbT/bRUtUxGY/x5U9T5CaqUd9VGCxR3zFec780XrFpIdoZ25PcI67l0DfB5FNXDJJ9m2XbAWEHLL1Fy9YCRmXy6s40tYJVR0TMcBjiE0A4XaiRNGa1vCz5f0qwnh1tFbZmO7lsL6o8MHS/V3PeNNVBWJGZqBI6l6IUvhkd6cmmyB1ZmeCM+Y4JyMRDNm1Sn4BtuOA74p8nco9SfybKKeUq4O2fnjEyEboec5ER78ECw3jAO9+iho7CZ3877ilc5ry9gp9FhU6kP4n54Hz9+t1CPueg6qqdjjHCf4hNvBwZZufz1/c/wad7JPX+nRQjlvqG4iDltCBd2E2PcNbVAvw+IDbYMD0vG06blq2Z9hoWpzePdJiyw5tX5I0WoWbYLoLPqODWu66BjBppWHVHIuLiI0sE543S/zjbHkPhrh6y2OzR6TS3Ms040wt/MIa5Bn7TCVG9jU39pe8nhSoUcU8SCme2s+EgkpxzX28jBJtVP1orJi+AgdIJG/wPvXeFvkJwvgTOHrQOsVUbxgNHFz1gmeXbb2eIEzJPs7AQerDGeXPDLleedZu8V7FBpLYLq2fflPtetSd8z4XaTJKoAIZL6HLbu3Zd+NGzJKOGE8P+zpKVppclO/QfaBpgbuNUqpeRsBuxIz5pjoBS//TH6dDyZmn78=
   run:
-    - cp .env.heroku .env
-    - mkdir storage/
-    - chmod -R 0777 storage
-    - mkdir storage/framework/
-    - chmod -R 0777 storage/framework
-    - mkdir storage/framework/sessions
-    - mkdir storage/framework/views
-    - mkdir storage/framework/cache
-    - chmod -R 0777 storage/framework
-    - composer self-update
-    - composer install
+    - "cp .env.heroku .env"
+    - "mkdir storage/"
+    - "chmod -R 0777 storage"
+    - "mkdir storage/framework/"
+    - "chmod -R 0777 storage/framework"
+    - "mkdir storage/framework/sessions"
+    - "mkdir storage/framework/views"
+    - "mkdir storage/framework/cache"
+    - "chmod -R 0777 storage/framework"
