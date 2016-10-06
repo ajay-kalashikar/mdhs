@@ -2,11 +2,11 @@ angular.module('mainCtrl', [])
 
 	.controller('mainController', function($scope, $http, Search, PagerService) {
 		// object to hold all the data for the new comment form
-		var vm = this;
 		$scope.searchData = {};
 		$scope.searchResult = [];
 		$scope.pager = {};
     	$scope.setPage = setPage;
+    	$scope.errorMsg = "";
 
     	//Pagination init
     	function initController() {
@@ -88,13 +88,19 @@ angular.module('mainCtrl', [])
 		// function to handle submitting the form
 		$scope.search = function() {
 			$scope.loading = true;
-			
+			$scope.errorMsg = "";
 			// Fetch results
 			Search.search($scope.searchData)
 				.then(
 				function(data){
-					$scope.searchResult = data.data;
-					setPage(1);
+					if(data.data){
+						$scope.searchResult = data.data;
+						setPage(1);
+					}else if(data.error){
+						$scope.searchResult = [];
+						$scope.errorMsg = data.error;
+					}
+					
 				},
 				function(error){
 					$scope.errorMsg = error.error;

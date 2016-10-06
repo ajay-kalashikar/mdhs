@@ -60,8 +60,10 @@
   </header>
   <div class="usa-overlay"></div>
   <main id="main-content" class="usa-grid-full">
+
   	<form class="usa-form" ng-submit="search()">
   	<fieldset>	
+
   	<label for="input-type-text">Provider Name</label>
   	<input id="input-type-text" name="input-type-text" type="text" ng-model="searchData.provider_name">	
     <label for="providerType">Provider Type</label>
@@ -70,7 +72,7 @@
       <option value="">Select Provider</option>
     </select>
     <label for="County">County</label>
-    <select name="county" id="County" ng-model="searchData.county_id" ng-change="loadCities(searchData.county)">
+    <select name="county" id="County" ng-model="searchData.county" ng-change="loadCities(searchData.county)">
       <option ng-repeat="county in counties" value="{{county.id}}">{{county.name}}</option>
       <option value="">Select County</option>
     </select>
@@ -84,7 +86,7 @@
     <select name="star_ratings" id="starRatings" ng-model ="searchData.rating">
       <option ng-repeat="rating in ratings" value="{{rating.rating}}">{{rating.description}}</option>
     </select>
-    
+     <div class="usa-input-error-message" ng-if="errorMsg">{{errorMsg}}</div>
     </fieldset>
     <input type="submit" value="Search" />
   </form>
@@ -104,6 +106,10 @@
         <th scope="row">{{result.name}}</th>
         <td>{{result.phone_no}}</td>
         <td>{{result.quality_rating}}</td>
+      </tr>
+
+      <tr ng-if="items.length < 1">
+        <td colspan="3"><h6>No Result Found!</h6></td>
       </tr>
       
     </tbody>
