@@ -38,11 +38,17 @@
         ],
         "post-install-cmd": [
             "Illuminate\\Foundation\\ComposerScripts::postInstall",
-            "php artisan optimize"
+            "php artisan optimize",
+            "chmod -R 0777 storage",
+            "touch storage/logs/laravel.log",
+            "chmod -R 0777 storage/logs/laravel.log"
         ],
         "post-update-cmd": [
             "Illuminate\\Foundation\\ComposerScripts::postUpdate",
-            "php artisan optimize"
+            "php artisan optimize",
+            "chmod -R 0777 storage",
+            "touch storage/logs/laravel.log",
+            "chmod -R 0777 storage/logs/laravel.log"
         ]
     },
     "config": {

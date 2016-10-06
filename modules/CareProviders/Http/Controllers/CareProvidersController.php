@@ -45,7 +45,7 @@ class CareProvidersController extends Controller {
             return response($details, 200);
         }
         catch (Exception $ex) {
-            return response($ex->getMessage(), 422);
+            return response(['error' => $ex->getMessage(), 'success' => false]);
         }
     }
 
