@@ -6,7 +6,7 @@ Child care search service by Mississippi Department of Human Services
 - travis CLI
 - heroku CLI
 
-<h3>Process</h3>
+<h3>References</h3>
 GIT installation: https://www.atlassian.com/git/tutorials/install-git/
 
 travic-ci cli installation: https://github.com/travis-ci/travis.rb#installation
@@ -16,6 +16,8 @@ travic-ci cli usage: https://github.com/travis-ci/travis.rb#the-travis-client-
 heroku cli installation: https://devcenter.heroku.com/articles/heroku-command-line#download-and-install
 
 heroku cli usage: https://devcenter.heroku.com/articles/heroku-command-line#getting-started
+
+<h3>Setting up the deployment</h3>
 
 Once you have GIT configured. Clone the repository:
 
