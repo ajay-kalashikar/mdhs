@@ -1,5 +1,0 @@
-{
-  "scripts": {
-    "postdeploy": "bundle exec chmod -R 0777 storage; bundle exec touch storage/logs/laravel.log;"
-  }
-}
