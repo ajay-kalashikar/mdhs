@@ -36,9 +36,7 @@
       </div>
       <nav role="navigation" class="usa-nav">
         <div class="usa-nav-inner">
-          <button class="usa-nav-close">
-            <img src="img/close.svg" alt="close">
-          </button>
+          
           <ul class="usa-nav-primary usa-accordion">
                       
             <li>
