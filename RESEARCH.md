@@ -62,3 +62,13 @@ In fact, creating custom columns as array of datatypes has never been as easy as
 Given the growing need for managing excess data, the sophisticated features of Postgres including Multi-Version Concurrency Control, asynchronous replication, write ahead logging, point in time recovery, multibyte character encodings support, etc. come up as a valuable support for today’s demanding database management system. 
 
 Indeed few of the active Postgres systems are capable of managing in excess of up to 4 terabytes of data, providing a major lead in database management.
+
+<h2>AngularJS</h2>
+
+AngularJS is a HVVM framework for dynamic web application. With AngularJS one can easily extend or manipulate HTML on the fly. Angular's directives and dependency injection minimize coding efforts to a great extent. Two-way data binding of AngularJS ensures that changes made in model or view are instantly displayed.
+
+It reduces manual coding as much as possible and hence it ensures faster development. It is responsive, highly customizable and fast loading framework which is responsible for a great user experience.
+
+AngularJs can build highly testable web apps. It allows unit-testing and end-to-end testing which makes it easy to debug.
+
+With AngularJS, you can speed up the overall development, can be sure of a bug free web app and have rich user experience.
