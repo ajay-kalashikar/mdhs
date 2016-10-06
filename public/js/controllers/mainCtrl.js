@@ -2,10 +2,11 @@ angular.module('mainCtrl', [])
 
 	.controller('mainController', function($scope, $http, Search, PagerService) {
 		// object to hold all the data for the new comment form
-		var vm = this;
-		$scope.searchData = [];
+		$scope.searchData = {};
+		$scope.searchResult = [];
 		$scope.pager = {};
     	$scope.setPage = setPage;
+    	$scope.errorMsg = "";
 
     	//Pagination init
     	function initController() {
@@ -87,32 +88,39 @@ angular.module('mainCtrl', [])
 		// function to handle submitting the form
 		$scope.search = function() {
 			$scope.loading = true;
-			
+			$scope.errorMsg = "";
 			// Fetch results
 			Search.search($scope.searchData)
 				.then(
 				function(data){
-					$scope.searchData = data.data;
-					setPage(1);
+					if(data.data){
+						$scope.searchResult = data.data;
+						setPage(1);
+					}else if(data.error){
+						$scope.searchResult = [];
+						$scope.errorMsg = data.error;
+					}
+					
 				},
 				function(error){
+					$scope.errorMsg = error.error;
 					console.log("Error Log",error.statusText);
 				}
 			);
 		};
 
 		function setPage(page) {
-			console.log("Page",page);
+			
 	        if (page < 1 ) {
 	        	console.log("REturn");
 	            return;
 	        }
  
         // get pager object from service
-	        $scope.pager = PagerService.GetPager($scope.searchData.length, page);
-	 		console.log("Pager",$scope.pager);
+	        $scope.pager = PagerService.GetPager($scope.searchResult.length, page);
+	 		
 	        // get current page of items
-	        $scope.items = $scope.searchData.slice($scope.pager.startIndex, $scope.pager.endIndex + 1);
+	        $scope.items = $scope.searchResult.slice($scope.pager.startIndex, $scope.pager.endIndex + 1);
     	}
 
     	initController();
