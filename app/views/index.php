@@ -70,19 +70,19 @@
       <option value="">Select Provider</option>
     </select>
     <label for="County">County</label>
-    <select name="county" id="County" ng-model="searchData.county_id" ng-change="loadCities(searchData.county_id)">
+    <select name="county" id="County" ng-model="searchData.county_id" ng-change="loadCities(searchData.county)">
       <option ng-repeat="county in counties" value="{{county.id}}">{{county.name}}</option>
       <option value="">Select County</option>
     </select>
     <label for="City">City</label>
-    <select name="city" id="City" ng-model="searchData.physical_city">
+    <select name="city" id="City" ng-model="searchData.city">
       <option ng-repeat="city in cities" value="{{city.city}}">{{city.city}}</option>
       <option value="">Select City</option>
     </select>
     
     <label for="starRatings">Quality Star Ratings</label>
-    <select name="star_ratings" id="starRatings" ng-model ="searchData.quality_rating">
-      <option ng-repeat="rating in ratings" value="{{rating.id}}">{{rating.description}}</option>
+    <select name="star_ratings" id="starRatings" ng-model ="searchData.rating">
+      <option ng-repeat="rating in ratings" value="{{rating.rating}}">{{rating.description}}</option>
     </select>
     
     </fieldset>
