@@ -8,7 +8,7 @@ before_script:
 - psql -c 'create database travis_ci_test;' -U postgres
 - composer self-update
 - composer install
-- php artisan db:migrate
+- php artisan migrate
 - php artisan db:seed --class=CountyDetailsTableSeeder
 - php artisan db:seed --class=provider_type_seeder
 - php artisan db:seed --class=quality_ratings_seeder
