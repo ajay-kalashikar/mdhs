@@ -29,7 +29,7 @@
         <button class="usa-menu-btn">Menu</button>
         
           	<div class="usa-image-block">
-            	<a href="#" accesskey="1" title="Home" aria-label="Home"><img src="img/mdhs_logo.png" alt="Mississippi Department Of Health Services" ></a>
+            	<a href="#" accesskey="1" title="Home" aria-label="Home"><img src="img/mdhs_logo.png" alt="Mississippi Department Of Health Services" height="95px;"></a>
         	</div>	
           
       
