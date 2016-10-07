@@ -94,7 +94,7 @@
   </form>
 
   <h6>Child Care Providers</h6>
-  <p><input type="reset" value="reset" class="pull-xs-right" ng-click="resetForm()"/></p>
+  <p><input type="reset" value="Reset" class="pull-xs-right" ng-click="resetForm()"/></p>
   <table class="usa-table-borderless">
     
     <thead>
